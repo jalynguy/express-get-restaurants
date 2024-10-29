@@ -8,7 +8,13 @@ const db = require("../db/connection");
 
 app.get('/restaurants', async (req, res)=>{
     const result = await Restaurant.findAll();
-    res.send(result);
+    res.send(result).json();
+});
+
+
+app.get('/restaurants/:id', async (req, res) => {
+    const result = await Restaurant.findByPk(req.params.id);
+    res.send(result).json();
 });
 
 module.exports = app;
