@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(express.urlencoded());
 
 app.post('/restaurants', async (req,res)=>{
-    const result = await Restaurant.create({name: 'Kendrick Lamar', instrument: 'Voice'});
+    const result = await Restaurant.create({name: 'TGIF', location: 'California', cuisine: 'American'});
     res.send(result);
 });
 
@@ -38,5 +38,6 @@ app.delete('/restaurants/:id', async (req, res) => {
     const result = await Restaurant.findByPk(req.params.id);
     result.destroy();
     res.send(result).json();
+
 })
 module.exports = app;
