@@ -1,4 +1,4 @@
-const app = require("./src/app")
+const app = require("./src/routes/restaurants.js")
 const db = require("./db/connection");
 const port = 3000;
 
